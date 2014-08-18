@@ -1,0 +1,9 @@
+F:\Summer 2014\ASP.Net\inventors-modules\database\bin\Debug\database.dacpac
+F:\Summer 2014\ASP.Net\inventors-modules\database\bin\Debug\database.dll
+F:\Summer 2014\ASP.Net\inventors-modules\database\bin\Debug\database.pdb
+F:\Summer 2014\ASP.Net\inventors-modules\database\obj\Debug\Model.xml
+F:\Summer 2014\ASP.Net\inventors-modules\database\obj\Debug\refactor.xml
+F:\Summer 2014\ASP.Net\inventors-modules\database\obj\Debug\postdeploy.sql
+F:\Summer 2014\ASP.Net\inventors-modules\database\obj\Debug\predeploy.sql
+F:\Summer 2014\ASP.Net\inventors-modules\database\obj\Debug\database.dll
+F:\Summer 2014\ASP.Net\inventors-modules\database\obj\Debug\database.pdb
