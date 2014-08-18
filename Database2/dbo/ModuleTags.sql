@@ -1,0 +1,1 @@
+﻿CREATE TABLE ModuleTags (ModulesFK int not null, TagsFK int not null);
