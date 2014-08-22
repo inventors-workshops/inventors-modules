@@ -184,5 +184,8 @@ FakesAssemblies/
 
 packages/*
 database/*
+src/inventors-modules/Images/*
+src/inventors-modules/Content/*
+src/inventors-modules/Images/*
 
 
