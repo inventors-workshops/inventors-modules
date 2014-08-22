@@ -7,7 +7,6 @@ using System.Web.UI.WebControls;
 using System.Net.Mail;    //using the Microsoft Mail
 using System.Text.RegularExpressions;  //using a specific file of general text to check format or content
 
-
 namespace WebApplication1
 {
     public partial class Contact : System.Web.UI.Page
