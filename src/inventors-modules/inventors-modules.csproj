@@ -265,9 +265,6 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <None Include="Service References\ContextAwareSearchService\configuration91.svcinfo" />
     <None Include="Service References\ContextAwareSearchService\configuration.svcinfo" />
-    <None Include="Service References\ContextAwareSearchService\ContextAwareSearchService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\ContextAwareSearchService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -287,6 +284,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ContextAwareSearchService\ContextAwareSearchService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ContextAwareSearchService\ContextAwareSearchService3.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ContextAwareSearchService\Service.wsdl" />

@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ContextAwareSearch" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ContextAwareSearch" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:complexType name="ArrayOfSearchResult">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="SearchResult" nillable="true" type="tns:SearchResult" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfSearchResult" nillable="true" type="tns:ArrayOfSearchResult" />
-  <xs:complexType name="SearchResult">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ranking" type="xs:int" />
-      <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="url" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="SearchResult" nillable="true" type="tns:SearchResult" />
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://inventorsworkshops.org/context-aware-search/ContextAwareSearchService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://inventorsworkshops.org/context-aware-search/ContextAwareSearchService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ContextAwareSearch" />
+  <xs:element name="ContextAwareSearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="query" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="keywords" nillable="true" type="q1:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ContextAwareSearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ContextAwareSearch" minOccurs="0" name="ContextAwareSearchResult" nillable="true" type="q2:ArrayOfSearchResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
