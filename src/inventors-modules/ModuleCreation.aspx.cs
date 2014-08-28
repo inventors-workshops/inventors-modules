@@ -1,9 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System;
+using System.Net.Http;
+using Newtonsoft.Json.Linq;
 
 namespace WebApplication1
 {
@@ -34,13 +40,13 @@ namespace WebApplication1
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            ContextAwareSearchService.SearchServiceClient searchClient = new ContextAwareSearchService.SearchServiceClient();
             string title = txtTitle.Text.Trim();
             string[] tags = txtTags.Text.Split(',');
-            ContextAwareSearchService.SearchResult[] searchResults = searchClient.ContextAwareSearch(title, tags);
+
+            SearchResult[] searchResults = new SearchResult[0];
 
             cblSearchResults.Items.Clear();
-            foreach (ContextAwareSearchService.SearchResult result in searchResults)
+            foreach (SearchResult result in searchResults)
             {
                 ListItem item = new ListItem();
                 item.Text = result.title + result.description;
