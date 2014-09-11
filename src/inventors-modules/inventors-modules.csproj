@@ -216,7 +216,9 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\Site.scss" />
     <Content Include="ConnectionStrings.example.config" />
-    <Content Include="ConnectionStrings.private.config" />
+    <Content Include="ConnectionStrings.private.config">
+      <SubType>Designer</SubType>
+    </Content>
     <EntityDeploy Include="ModulesModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModulesModel.Designer.cs</LastGenOutput>
@@ -262,6 +264,7 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="TestResourceType.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -383,6 +386,7 @@
     <Compile Include="resourcetype.cs">
       <DependentUpon>ModulesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ResourceTypeDataProvider.cs" />
     <Compile Include="SearchResult.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -400,6 +404,13 @@
     </Compile>
     <Compile Include="tag.cs">
       <DependentUpon>ModulesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TestResourceType.aspx.cs">
+      <DependentUpon>TestResourceType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestResourceType.aspx.designer.cs">
+      <DependentUpon>TestResourceType.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
