@@ -8,8 +8,10 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:TextBox ID="null" runat="server" />
+        <asp:TextBox ID="resourceTypeName" runat="server" />
+        <asp:CheckBox id="checking" Text="Active?" Checked="TRUE" runat="server" />
 
+        <asp:Button ID="btnSubmit" runat="server" Text="Submit" onclick="btnSubmit_Click"/>
         <p>Resource Type: </p>
         <table>
             <tr>

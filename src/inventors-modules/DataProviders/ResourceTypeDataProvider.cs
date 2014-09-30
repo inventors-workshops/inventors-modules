@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data;
 using System.Data.Entity;
 
-namespace WebApplication1
+namespace WebApplication1.DataProviders
 {
     public class ResourceTypeDataProvider
     {
@@ -27,14 +28,6 @@ namespace WebApplication1
 
             return prKey;
         }
-        //display the resourceType
-        public IEnumerable<ResourceType> DisplayAllResourceTypes()
-        {
-            using (DBEntities db = new DBEntities())
-            {
-                return db.ResourceTypes.ToArray<ResourceType>();
-            }
-        }
 
         //update ResourceType if necessary
         public void UpdateResourceType(int prKey, string _name, bool _isActive)
@@ -50,7 +43,7 @@ namespace WebApplication1
             }
         }
 
-        public bool deleteResourceType(int prKey)
+        public bool DeleteResourceType(int prKey)
         {
             using (DBEntities db = new DBEntities())
             {

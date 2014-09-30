@@ -326,6 +326,7 @@
     <Compile Include="Comment.cs">
       <DependentUpon>ModulesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataProviders\ResourceTypeDataProvider.cs" />
     <Compile Include="Module.cs">
       <DependentUpon>ModulesModel.tt</DependentUpon>
     </Compile>
