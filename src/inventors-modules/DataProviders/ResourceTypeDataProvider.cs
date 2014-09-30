@@ -43,11 +43,12 @@ namespace WebApplication1.DataProviders
             }
         }
 
-        public bool DeleteResourceType(int prKey)
+        public bool DeleteResourceType(string _name)
         {
             using (DBEntities db = new DBEntities())
             {
-                ResourceType moduleResourceType = db.ResourceTypes.Where(m => m.PrKey == prKey).First<ResourceType>();
+                //ResourceType moduleResourceType = db.ResourceTypes.Where(m => m.PrKey == prKey).First<ResourceType>();
+                ResourceType moduleResourceType = db.ResourceTypes.Where(m => m.Name == _name).First<ResourceType>();
                 moduleResourceType.IsActive = false;
                 db.SaveChanges();
             }

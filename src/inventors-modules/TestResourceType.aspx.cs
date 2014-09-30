@@ -25,13 +25,13 @@ namespace WebApplication1
         {
             IEnumerable<ResourceType> resourceType = resourceTypeDP.DisplayAllResourceTypes();
 
-            string resourceTypeKey = Listing.DataKeys[e.RowIndex].Values["PrKey"].ToString();
+            string resourceTypeKey = Listing.DataKeys[e.RowIndex].Values["Name"].ToString();
 
-            int key = Int32.Parse(resourceTypeKey);
+            //int key = Int32.Parse(resourceTypeKey);
 
-            bool click = resourceTypeDP.deleteResourceType(key);
+            bool click = resourceTypeDP.DeleteResourceType(resourceTypeKey);
 
-            Listing.DataSource = resourceType;
+            Listing.DataSource = resourceTypeDP.DisplayAllResourceTypes();
             Listing.DataBind();
         }
 
