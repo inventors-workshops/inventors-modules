@@ -403,7 +403,6 @@
     <Compile Include="ResourceType.cs">
       <DependentUpon>ModulesModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ResourceTypeDataProvider.cs" />
     <Compile Include="SearchResult.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

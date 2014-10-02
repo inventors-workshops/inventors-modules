@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebApplication1.DataProviders;
 
 namespace WebApplication1
 {
@@ -13,7 +14,6 @@ namespace WebApplication1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
             IEnumerable<ResourceType> resourceType = resourceTypeDP.DisplayAllResourceTypes();
 
             Listing.DataSource = resourceType;
@@ -35,6 +35,17 @@ namespace WebApplication1
             Listing.DataBind();
         }
 
+        protected void Listing_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            IEnumerable<ResourceType> resourceType = resourceTypeDP.DisplayAllResourceTypes();
+            
+            Listing.EditIndex = e.NewEditIndex;
+
+            resourceTypeDP.UpdateResourceType(e.NewEditIndex.ToString());
+
+            Listing.DataSource = resourceTypeDP.DisplayAllResourceTypes();
+            Listing.DataBind();
+        }
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             IEnumerable<ResourceType> resourceType = resourceTypeDP.DisplayAllResourceTypes();

@@ -28,28 +28,34 @@ namespace WebApplication1.DataProviders
 
             return prKey;
         }
-
-        //update ResourceType if necessary
-        public void UpdateResourceType(int prKey, string _name, bool _isActive)
+        //display the resourceType
+        public IEnumerable<ResourceType> DisplayAllResourceTypes()
         {
             using (DBEntities db = new DBEntities())
             {
-                ResourceType moduleResourceType = db.ResourceTypes.Where(m => m.PrKey == prKey).First<ResourceType>();
+                return db.ResourceTypes.ToArray<ResourceType>();
+            }
+        }
+
+        //update ResourceType if necessary
+        public void UpdateResourceType(string _name)
+        {
+            using (DBEntities db = new DBEntities())
+            {
+                ResourceType moduleResourceType = db.ResourceTypes.Where(m => m.Name == _name).First<ResourceType>();
 
                 moduleResourceType.Name = _name;
-                moduleResourceType.IsActive = _isActive;
-
                 db.SaveChanges();
             }
         }
 
-        public bool DeleteResourceType(string _name)
+        public bool DeleteResourceType(string name)
         {
             using (DBEntities db = new DBEntities())
             {
-                //ResourceType moduleResourceType = db.ResourceTypes.Where(m => m.PrKey == prKey).First<ResourceType>();
-                ResourceType moduleResourceType = db.ResourceTypes.Where(m => m.Name == _name).First<ResourceType>();
+                ResourceType moduleResourceType = db.ResourceTypes.Where(m => m.Name == name).First<ResourceType>();
                 moduleResourceType.IsActive = false;
+                db.ResourceTypes.Remove(moduleResourceType);
                 db.SaveChanges();
             }
             return true;
